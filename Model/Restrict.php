@@ -99,7 +99,7 @@ class Restrict implements RestrictInterface
     {
         // Always allow admin access in developer mode.
         if ($this->appState->getMode() === State::MODE_DEVELOPER) {
-            return;
+            return true;
         }
 
         $ipAddress = $this->remoteAddress->getRemoteAddress();
